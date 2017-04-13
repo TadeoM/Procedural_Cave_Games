@@ -8,6 +8,8 @@ public class MeshGenerator : MonoBehaviour {
     public SquareGrid squareGrid;
     List<Vector3> vertices;
     List<int> triangles;
+
+    Dictionary<int, List<Triangle>> triangleDictionary = new Dictionary<int, List<Triangle>>();
     
     public void GenerateMesh(int[,] map, float squareSize)
     {
@@ -126,7 +128,26 @@ public class MeshGenerator : MonoBehaviour {
         triangles.Add(a.vertexIndex);
         triangles.Add(b.vertexIndex);
         triangles.Add(c.vertexIndex);
+
+        Triangle triangle = new Triangle(a.vertexIndex, b.vertexIndex, c.vertexIndex);
     }
+
+    void AddTriangleToDictionary(int )
+
+    struct Triangle
+    {
+        public int vertexIndexA;
+        public int vertexIndexB;
+        public int vertexIndexC;
+
+        public Triangle (int a, int b, int c)
+        {
+            vertexIndexA = a;
+            vertexIndexB = b;
+            vertexIndexC = c;
+        }
+    }
+
 
     /*void OnDrawGizmos()
     {
