@@ -42,8 +42,26 @@ public class MapGenerator : MonoBehaviour
             SmoothMap();
         }
 
-        MeshGenerator meshGen = GetComponent<MeshGenerator>();
-        meshGen.GenerateMesh(map, 1);
+        int borderSize = 2;
+        int[,] borderedMap = new int[width + borderSize * 2, height + borderSize * 2];
+
+        for (int x = 0; x < borderedMap.GetLength(0); x++)
+        {
+            for (int y = 0; y < borderedMap.GetLength(1); y++)
+            {
+                if(x>= borderSize && x < width + borderSize && y >= borderSize && y < height + borderSize)
+                {
+                    borderedMap[x, y] = map[x - borderSize, y - borderSize];
+                }
+                else
+                {
+                    borderedMap[x, y] = 1;
+                }
+            }
+        }
+
+                MeshGenerator meshGen = GetComponent<MeshGenerator>();
+        meshGen.GenerateMesh(borderedMap, 1);
     }
 
     void RandomFillMap()
@@ -107,9 +125,9 @@ public class MapGenerator : MonoBehaviour
         return wallCount;
     }
 
-    void OnDrawGizmos()
+    /*void OnDrawGizmos()
     {
-        /*
+        
         if (map != null)
         {
             for (int x = 0; x < width; x++)
@@ -122,5 +140,5 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }*/
-    }
 }
+
