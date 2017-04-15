@@ -132,7 +132,7 @@ public class MeshGenerator : MonoBehaviour {
         Triangle triangle = new Triangle(a.vertexIndex, b.vertexIndex, c.vertexIndex);
     }
 
-    void AddTriangleToDictionary(int )
+    //void AddTriangleToDictionary(int )
 
     struct Triangle
     {
@@ -147,37 +147,6 @@ public class MeshGenerator : MonoBehaviour {
             vertexIndexC = c;
         }
     }
-
-
-    /*void OnDrawGizmos()
-    {
-        if(squareGrid != null)
-        {
-            for (int x = 0; x < squareGrid.squares.GetLength(0); x++)
-            {
-                for (int y = 0; y < squareGrid.squares.GetLength(1); y++)
-                {
-                    Gizmos.color = (squareGrid.squares[x, y].topLeft.active) ? Color.black : Color.white;
-                    Gizmos.DrawCube(squareGrid.squares[x, y].topLeft.position, Vector3.one * .4f);
-
-                    Gizmos.color = (squareGrid.squares[x, y].topRight.active) ? Color.black : Color.white;
-                    Gizmos.DrawCube(squareGrid.squares[x, y].topRight.position, Vector3.one * .4f);
-
-                    Gizmos.color = (squareGrid.squares[x, y].bottomLeft.active) ? Color.black : Color.white;
-                    Gizmos.DrawCube(squareGrid.squares[x, y].bottomLeft.position, Vector3.one * .4f);
-
-                    Gizmos.color = (squareGrid.squares[x, y].bottomRight.active) ? Color.black : Color.white;
-                    Gizmos.DrawCube(squareGrid.squares[x, y].bottomRight.position, Vector3.one * .4f);
-
-                    Gizmos.color = Color.grey;
-                    Gizmos.DrawCube(squareGrid.squares[x, y].centerTop.position, Vector3.one * .15f);
-                    Gizmos.DrawCube(squareGrid.squares[x, y].centerRight.position, Vector3.one * .15f);
-                    Gizmos.DrawCube(squareGrid.squares[x, y].centerLeft.position, Vector3.one * .15f);
-                    Gizmos.DrawCube(squareGrid.squares[x, y].centerBottom.position, Vector3.one * .15f);
-                }
-            }
-        }
-    }*/
 
     public class SquareGrid
     {
