@@ -12,7 +12,7 @@ public class MapGenerator : MonoBehaviour
     public string seed;
     public bool useRandomSeed;
 
-    [Range(0, 100)]
+    [Range(40, 50)]
     public int randomFillPercent;
 
     int[,] map;
